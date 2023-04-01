@@ -1,0 +1,29 @@
+{%extends 'index.html'%}
+
+{% block content %}
+
+<div class="container">
+</br>
+    
+        <div class="cont2">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="error_flash">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i><br>
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+                </div>
+                <br><hr><br>
+                {% endif %}
+            {% endwith %}
+            <ul>
+                {% for valor in dic %}
+                <li>{{valor.capitalize()}}: " {{dic[valor]}} "</li>
+                {% endfor %} 
+            </ul> 
+        </div>
+      
+</div>
+
+{% endblock %}
